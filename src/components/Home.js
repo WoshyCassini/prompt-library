@@ -9,6 +9,7 @@ const Home = () => {
   const [visibleTiles, setVisibleTiles] = useState(10); // Number of initially visible tiles
   const [isLoading, setIsLoading] = useState(false); // Loading state for fetching more tiles
   const [searchQuery, setSearchQuery] = useState(''); // Search
+  
   const tileRef = useRef(null);
 
   // Create an instance of MockedBFF
@@ -51,17 +52,17 @@ const Home = () => {
     }
   }, [isLoading, data.length]);
 
-  // Filter tiles
 
-  // Slide non visible tiles
-  const visibleData = data.slice(0, visibleTiles);
 
-  const handleSearch = () => {
-    const filteredData = visibleData.filter((item) =>
-      item.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+// Filter data
+  const filteredData = data.filter((item) =>
+  item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  item.description.toLowerCase().includes(searchQuery.toLowerCase())
+);
 
-  };
+// Slide non visible tiles
+const visibleData = filteredData.slice(0, Math.min(visibleTiles,filteredData.length));
+
 
 
   return (
@@ -74,7 +75,6 @@ const Home = () => {
           placeholder="Filtern..."
           className="search-bar"
         />
-        <button className="search-button">Filtern</button>
       </div>
 
 
