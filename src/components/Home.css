@@ -3,7 +3,7 @@
   }
 
   .home-container {
-    text-align: center;
+    padding: 20px;
   }
   
   .tiles-container {
@@ -23,7 +23,20 @@
     transition: background-color 0.3s ease;
   }
   
+  .load-more-button {
+    background-color: #2cc700;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
   .load-more-button:hover {
     background-color: #51773f;
   }
+  
   

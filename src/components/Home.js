@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Tile from './Tile';
+import './Home.css'; // Import the CSS file for styling
 
 const Home = () => {
   const [visibleTiles, setVisibleTiles] = useState(10); // Number of initially visible tiles
@@ -26,10 +27,9 @@ const Home = () => {
     { title: 'Tile 18', description: 'Description 18' },
     { title: 'Tile 19', description: 'Description 19' },
     { title: 'Tile 20', description: 'Description 20' },
-    { title: 'Tile 17', description: 'Description 17' },
-    { title: 'Tile 18', description: 'Description 18' },
-    { title: 'Tile 19', description: 'Description 19' },
-    { title: 'Tile 20', description: 'Description 20' },
+    { title: 'Tile 21', description: 'Description 21' },
+    { title: 'Tile 22', description: 'Description 22' },
+    { title: 'Tile 23', description: 'Description 23' },
   ];
 
   const visibleData = data.slice(0, visibleTiles);
@@ -40,13 +40,15 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="home-container">
       {visibleData.map((item, index) => (
         <Tile key={index} title={item.title} description={item.description} />
       ))}
 
       {visibleTiles < data.length && (
-        <button onClick={loadMoreTiles}>Load More</button>
+        <button className="load-more-button" onClick={loadMoreTiles}>
+          Load More
+        </button>
       )}
     </div>
   );
