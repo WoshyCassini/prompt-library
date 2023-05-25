@@ -58,24 +58,24 @@ const Home = () => {
 
   const handleSearch = () => {
     const filteredData = visibleData.filter((item) =>
-    item.title.toLowerCase().includes(searchQuery.toLowerCase())
-);
+      item.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
   };
-  
+
 
   return (
     <div className="home-container">
       <div className="search-container">
-      <input
-        type="text"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="Filtern..."
-        className="search-bar"
-      />
-      <button className="search-button">Filtern</button>
-    </div>
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Filtern..."
+          className="search-bar"
+        />
+        <button className="search-button">Filtern</button>
+      </div>
 
 
 
