@@ -1,0 +1,47 @@
+.prompt-details {
+    background-color: var(--main-background-color-transparent);
+    color: var(--main-text-color);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.prompt-details:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.prompt-details .category,
+.prompt-details .title,
+.prompt-details .optimized-prompt {
+    color: var(--main-color);
+}
+
+.prompt-details .description {
+    margin: 20px 0;
+}
+
+.prompt-details .result-history-item {
+    margin-bottom: 20px;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.prompt-details .result-history-item p {
+    margin: 0;
+}
+
+.prompt-details .tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.prompt-details .tags .tag {
+    background-color: var(--main-color);
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
