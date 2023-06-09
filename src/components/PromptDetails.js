@@ -10,6 +10,11 @@ const PromptDetails = ({ data }) => {
             <h3 className="optimized-prompt">{data.OptimizedPrompt}</h3>
             <div className="result">{data.Result}</div>
             <h4>Result History</h4>
+        </div>
+    );
+}
+/*
+
             {data.ResultHistory.map((item, index) => (
                 <div key={index} className="result-history-item">
                     <p><strong>Request:</strong> {item.Request}</p>
@@ -22,8 +27,6 @@ const PromptDetails = ({ data }) => {
                     <span key={index} className="tag">{tag}</span>
                 ))}
             </div>
-        </div>
-    );
-}
+*/
 
 export default PromptDetails;

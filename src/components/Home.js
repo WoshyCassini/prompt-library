@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Tile from './Tile';
 import './Home.css'; // Import the CSS file for styling
+import PromptDetails from './PromptDetails';
+
 
 // Import MockedBFF
 import { MockedBFF } from '../api/MockedBFF';
@@ -9,6 +11,8 @@ const Home = () => {
   const [visibleTiles, setVisibleTiles] = useState(10); // Number of initially visible tiles
   const [isLoading, setIsLoading] = useState(false); // Loading state for fetching more tiles
   const [searchQuery, setSearchQuery] = useState(''); // Search
+  const [selectedPrompt, setSelectedPrompt] = useState(null);
+
   
   const tileRef = useRef(null);
 
@@ -77,13 +81,16 @@ const visibleData = filteredData.slice(0, Math.min(visibleTiles,filteredData.len
         />
       </div>
 
-
-
-      {visibleData.map((item, index) => (
-        <Tile key={index} title={item.title} description={item.description} />
+      {!selectedPrompt && visibleData.map((item, index) => (
+        <Tile key={index} title={item.title} description={item.description} onClick={() => setSelectedPrompt(item)} />
       ))}
 
-      {isLoading && <div className="loading-message">Loading...</div>}
+      
+
+      {selectedPrompt && <PromptDetails data={selectedPrompt} />}
+
+
+      {!selectedPrompt && isLoading && <div className="loading-message">Loading...</div>}
 
       <div ref={tileRef} />
     </div>
