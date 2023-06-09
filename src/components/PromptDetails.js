@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import './PromptDetails.css';
 
-const PromptDetails = ({ data }) => {
+const PromptDetails = ({ data, handleDetailsClosed }) => {
     const [isHistoryOpen, setHistoryOpen] = useState(false);
 
     const toggleHistory = () => {
         setHistoryOpen(!isHistoryOpen);
     }
+    
+
 
     return (
         <div className="prompt-details">
@@ -30,6 +32,7 @@ const PromptDetails = ({ data }) => {
                     <span key={index} className="tag">{tag}</span>
                 ))}
             </div>
+            <button onClick={handleDetailsClosed} className="close-button">Close Details</button>
         </div>
     );
 }

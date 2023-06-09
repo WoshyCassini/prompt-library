@@ -1,3 +1,8 @@
+.prompt-details-container {
+    position: relative;
+    width: 100%;
+}
+
 .prompt-details {
     background-color: var(--main-background-color-transparent);
     color: var(--main-text-color);
@@ -38,7 +43,7 @@
 }
 
 .prompt-details .tags .tag {
-    background-color: var(--main-color);
+    background-color: var(--cassini-grey);
     color: #ffffff;
     padding: 5px 10px;
     margin-right: 10px;
@@ -51,3 +56,21 @@
     color: var(--main-color);
     text-decoration: underline;
 }
+
+.prompt-details .close-button {
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 100%; 
+}
+
+.prompt-details .close-button:hover {
+    background-color: darken(var(--main-color), 20%);
+}
+

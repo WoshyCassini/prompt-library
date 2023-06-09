@@ -67,7 +67,9 @@ const Home = () => {
 // Slide non visible tiles
 const visibleData = filteredData.slice(0, Math.min(visibleTiles,filteredData.length));
 
-
+const handleDetailsClosed = () => {
+  setSelectedPrompt(null)
+}
 
   return (
     <div className="home-container">
@@ -82,12 +84,12 @@ const visibleData = filteredData.slice(0, Math.min(visibleTiles,filteredData.len
       </div>
 
       {!selectedPrompt && visibleData.map((item) => (
-        <Tile data = {item} onClick={() => setSelectedPrompt(item)} />
+        <Tile data = {item} onClick={() => setSelectedPrompt(item)}  />
       ))}
 
       
 
-      {selectedPrompt && <PromptDetails data={selectedPrompt} />}
+      {selectedPrompt && <PromptDetails data={selectedPrompt} handleDetailsClosed = {handleDetailsClosed} />}
 
 
       {!selectedPrompt && isLoading && <div className="loading-message">Loading...</div>}

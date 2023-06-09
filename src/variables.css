@@ -1,6 +1,7 @@
 :root {
     --main-color: #2cc700;
     --main-background-color-transparent: rgba(44, 199, 0, 0.2);
+    --cassini-grey:  #949494;	
     --main-text-color: #666666;
     --border-color: #cccccc;
     --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
