@@ -1,10 +1,10 @@
 import React from 'react';
 import './Tile.css';
 
-const Tile = ({ title, description, onClick }) => (
+const Tile = ({ data, onClick }) => (
   <div className="tile-wrapper" onClick={onClick}>
-    <h2 className="tile-title">{title}</h2>
-    <p className="tile-description">{description}</p>
+    <h2 className="tile-title">{data.title}</h2>
+    <p className="tile-description">{data.description}</p>
   </div>
 );
 

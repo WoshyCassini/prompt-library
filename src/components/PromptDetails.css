@@ -45,3 +45,9 @@
     margin-bottom: 10px;
     border-radius: 5px;
 }
+
+.prompt-details .result-history-title {
+    cursor: pointer;
+    color: var(--main-color);
+    text-decoration: underline;
+}

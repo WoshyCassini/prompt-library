@@ -20,7 +20,7 @@ const Home = () => {
   const myBFF = new MockedBFF();
 
   // Use getTileData to populate the data array
-  const data = myBFF.getTileData();
+  const data = myBFF.getData();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -81,8 +81,8 @@ const visibleData = filteredData.slice(0, Math.min(visibleTiles,filteredData.len
         />
       </div>
 
-      {!selectedPrompt && visibleData.map((item, index) => (
-        <Tile key={index} title={item.title} description={item.description} onClick={() => setSelectedPrompt(item)} />
+      {!selectedPrompt && visibleData.map((item) => (
+        <Tile data = {item} onClick={() => setSelectedPrompt(item)} />
       ))}
 
       
