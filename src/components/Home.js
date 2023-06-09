@@ -71,9 +71,25 @@ const handleDetailsClosed = () => {
   setSelectedPrompt(null)
 }
 
+const displayTiles = () => {
+  return selectedPrompt == null;
+}
+
+const displayDetails = () => {
+  return selectedPrompt != null
+}
+
+const displayIsLoading = () => {
+  return !selectedPrompt && isLoading && !displayDetails()
+}
+
+const displayFilter = () => {
+  return ! displayDetails();
+}
+
   return (
     <div className="home-container">
-      <div className="search-container">
+      {displayFilter() && <div className="search-container">
         <input
           type="text"
           value={searchQuery}
@@ -82,17 +98,18 @@ const handleDetailsClosed = () => {
           className="search-bar"
         />
       </div>
+      }
 
-      {!selectedPrompt && visibleData.map((item) => (
+      {displayTiles() && visibleData.map((item) => (
         <Tile data = {item} onClick={() => setSelectedPrompt(item)}  />
       ))}
 
       
 
-      {selectedPrompt && <PromptDetails data={selectedPrompt} handleDetailsClosed = {handleDetailsClosed} />}
+      {displayDetails() && <PromptDetails data={selectedPrompt} handleDetailsClosed = {handleDetailsClosed} />}
 
 
-      {!selectedPrompt && isLoading && <div className="loading-message">Loading...</div>}
+      {displayIsLoading() && <div className="loading-message">Loading...</div>}
 
       <div ref={tileRef} />
     </div>

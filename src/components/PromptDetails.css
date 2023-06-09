@@ -71,6 +71,6 @@
 }
 
 .prompt-details .close-button:hover {
-    background-color: darken(var(--main-color), 20%);
+    background-color: var(--main-color-dark);
 }
 
